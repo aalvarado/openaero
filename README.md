@@ -29,6 +29,7 @@ sudo apt install linux-headers-$(uname -r) build-essential
 
 ### Make & Load
 ```bash
+cd driver
 make
 sudo insmod chuyuen_hidkbd_driver.ko
 ```
