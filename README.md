@@ -19,10 +19,10 @@ A collection of Linux drivers of various components for (Gigabyte) Aero devices.
 
 
 ## Install Instructions
-### Arch : ```pacman -S openaero-meta```
+**Arch :** `pacman -S openaero-meta`
 
 ## Credits
-***This project is heavily inspired (i.e copied 😄) from [OpenRazer](https://openrazer.github.io/).***
+**This project is heavily inspired (i.e copied 😄) from [OpenRazer](https://openrazer.github.io/).**
 
 ---
 The project is licensed under the GPL and is not officially endorsed by [Gigabyte, Ltd](https://www.gigabyte.com//).
