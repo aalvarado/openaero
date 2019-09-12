@@ -118,24 +118,24 @@ remove_dkms:
 udev_install:
 	@echo -e "\n::\033[34m Installing OpenAero udev rules\033[0m"
 	@echo "====================================================="
-	install -m 644 -v -D install_files/udev/99-razer.rules $(DESTDIR)/usr/lib/udev/rules.d/99-razer.rules
+	install -m 644 -v -D install_files/udev/99-aero.rules $(DESTDIR)/usr/lib/udev/rules.d/99-aero.rules
 	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)/usr/lib/udev/razer_mount
 
 udev_uninstall:
 	@echo -e "\n::\033[34m Uninstalling OpenAero udev rules\033[0m"
 	@echo "====================================================="
-	rm -f $(DESTDIR)/usr/lib/udev/rules.d/99-razer.rules $(DESTDIR)/usr/lib/udev/razer_mount
+	rm -f $(DESTDIR)/usr/lib/udev/rules.d/99-aero.rules $(DESTDIR)/usr/lib/udev/razer_mount
 
 ubuntu_udev_install:
 	@echo -e "\n::\033[34m Installing OpenAero udev rules\033[0m"
 	@echo "====================================================="
-	install -m 644 -v -D install_files/udev/99-razer.rules $(DESTDIR)/lib/udev/rules.d/99-razer.rules
+	install -m 644 -v -D install_files/udev/99-aero.rules $(DESTDIR)/lib/udev/rules.d/99-aero.rules
 	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)/lib/udev/razer_mount
 
 ubuntu_udev_uninstall:
 	@echo -e "\n::\033[34m Uninstalling OpenAero udev rules\033[0m"
 	@echo "====================================================="
-	rm -f $(DESTDIR)/lib/udev/rules.d/99-razer.rules $(DESTDIR)/lib/udev/razer_mount
+	rm -f $(DESTDIR)/lib/udev/rules.d/99-aero.rules $(DESTDIR)/lib/udev/razer_mount
 
 appstream_install:
 	@echo -e "\n::\033[34m Installing OpenAero AppStream metadata\033[0m"
