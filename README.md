@@ -22,9 +22,18 @@ Keyboard driver for Chu Yuen HID Keyboard.
 ## Install Instructions
 ### Prerequisites
 
+#### Ubuntu :
+
 ```bash
 sudo apt update
 sudo apt install linux-headers-$(uname -r) build-essential
+```
+
+#### Arch :
+
+```bash
+pacman -Syu
+pacman -S linux-headers
 ```
 
 ### Make & Load
