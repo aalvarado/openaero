@@ -47,10 +47,10 @@ driver_install_packaging:
 driver_uninstall:
 	@echo -e "\n::\033[34m Uninstalling OpenAero kernel modules\033[0m"
 	@echo "====================================================="
-	@rm -fv $(DESTDIR)/$(MODULEDIR)/razerkbd.ko
-	@rm -fv $(DESTDIR)/$(MODULEDIR)/razermouse.ko
-	@rm -fv $(DESTDIR)/$(MODULEDIR)/razerfirefly.ko
-	@rm -fv $(DESTDIR)/$(MODULEDIR)/razercore.ko
+	@rm -fv $(DESTDIR)/$(MODULEDIR)/aerokbd.ko
+	#@rm -fv $(DESTDIR)/$(MODULEDIR)/razermouse.ko
+	#@rm -fv $(DESTDIR)/$(MODULEDIR)/razerfirefly.ko
+	#@rm -fv $(DESTDIR)/$(MODULEDIR)/razercore.ko
 
 # Razer Daemon
 daemon_install:
@@ -119,23 +119,23 @@ udev_install:
 	@echo -e "\n::\033[34m Installing OpenAero udev rules\033[0m"
 	@echo "====================================================="
 	install -m 644 -v -D install_files/udev/99-aero.rules $(DESTDIR)/usr/lib/udev/rules.d/99-aero.rules
-	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)/usr/lib/udev/razer_mount
+	install -m 755 -v -D install_files/udev/aero_mount $(DESTDIR)/usr/lib/udev/aero_mount
 
 udev_uninstall:
 	@echo -e "\n::\033[34m Uninstalling OpenAero udev rules\033[0m"
 	@echo "====================================================="
-	rm -f $(DESTDIR)/usr/lib/udev/rules.d/99-aero.rules $(DESTDIR)/usr/lib/udev/razer_mount
+	rm -f $(DESTDIR)/usr/lib/udev/rules.d/99-aero.rules $(DESTDIR)/usr/lib/udev/aero_mount
 
 ubuntu_udev_install:
 	@echo -e "\n::\033[34m Installing OpenAero udev rules\033[0m"
 	@echo "====================================================="
 	install -m 644 -v -D install_files/udev/99-aero.rules $(DESTDIR)/lib/udev/rules.d/99-aero.rules
-	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)/lib/udev/razer_mount
+	install -m 755 -v -D install_files/udev/aero_mount $(DESTDIR)/lib/udev/aero_mount
 
 ubuntu_udev_uninstall:
 	@echo -e "\n::\033[34m Uninstalling OpenAero udev rules\033[0m"
 	@echo "====================================================="
-	rm -f $(DESTDIR)/lib/udev/rules.d/99-aero.rules $(DESTDIR)/lib/udev/razer_mount
+	rm -f $(DESTDIR)/lib/udev/rules.d/99-aero.rules $(DESTDIR)/lib/udev/aero_mount
 
 appstream_install:
 	@echo -e "\n::\033[34m Installing OpenAero AppStream metadata\033[0m"
