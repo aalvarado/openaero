@@ -19,12 +19,7 @@ A collection of Linux drivers of various components for (Gigabyte) Aero devices.
 
 
 ## Install Instructions
-### Arch :
-
-```bash
-pacman -S openaero-meta
-```
-***Note: Tested on Archlinux (Archlabs distro).***
+### Arch : ```pacman -S openaero-meta```
 
 ## Credits
 ***This project is heavily inspired (i.e copied 😄) from [OpenRazer](https://openrazer.github.io/).***
