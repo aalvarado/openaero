@@ -1,4 +1,4 @@
-# chuyuen_hidkbd_driver
+# aero15kbd-driver
 Keyboard driver for Chu Yuen HID Keyboard.
 
 ## What's Done
