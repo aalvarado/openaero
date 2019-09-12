@@ -19,29 +19,12 @@ A collection of Linux drivers of various components for (Gigabyte) Aero devices.
 
 
 ## Install Instructions
-### Prerequisites
-#### Ubuntu :
+### Arch :
 
 ```bash
-sudo apt update
-sudo apt install linux-headers-$(uname -r) build-essential
+pacman -S openaero-meta
 ```
-
-#### Arch :
-
-```bash
-pacman -Syu
-pacman -S linux-headers
-```
-
-### Make & Load
-```bash
-cd driver
-make
-sudo insmod chuyuen_hidkbd_driver.ko
-```
-***Note: Google for a way so that the module is loaded in the startup.***
-***Note: The driver is still far from complete. Tested on Archlinux (Archlabs distro).***
+***Note: Tested on Archlinux (Archlabs distro).***
 
 ## Credits
 ***This project is heavily inspired (i.e copied 😄) from [OpenRazer](https://openrazer.github.io/).***
