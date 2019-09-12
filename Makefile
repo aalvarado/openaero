@@ -11,7 +11,7 @@ MODULEDIR?=/lib/modules/$(shell uname -r)/kernel/drivers/hid
 # Python dir
 PYTHONDIR?=$(shell python3 -c 'import sys; print(sys.path[-1])')
 
-DKMS_NAME?=aero15kbd-driver
+DKMS_NAME?=openaero-driver
 DKMS_VER?=0.1.0
 
 

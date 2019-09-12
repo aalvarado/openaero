@@ -8,7 +8,7 @@
 #include <linux/module.h>
 
 MODULE_AUTHOR("Hemanth Bollamreddi <blmhemu@gmail.com>");
-MODULE_DESCRIPTION("HID Keyboard driver for Aero 15 Keyboard.");
+MODULE_DESCRIPTION("HID Keyboard driver for Gigabyte Aero Keyboard.");
 MODULE_LICENSE("GPL v2");
 
 //TODO: If put in mainstream kernel, modify this file to include the VID and PID.

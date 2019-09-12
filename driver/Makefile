@@ -1,1 +1,3 @@
-obj-m += aero15kbd_driver.o
+obj-m       := aerokbd.o
+
+aerokbd-y   := aerokbd_driver.o
