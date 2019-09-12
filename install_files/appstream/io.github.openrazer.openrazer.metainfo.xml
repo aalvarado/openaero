@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <id>io.github.openrazer.openrazer</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>OpenRazer</name>
+  <summary>Drivers for Aero15 Keyboard on GNU/Linux</summary>
+  <description>
+    <p>
+      OpenRazer is a collection of GNU/Linux drivers for the Razer devices.
+      Supported devices include keyboards, mice, mouse-mats, headsets and
+      various other devices. OpenRazer provides kernel drivers, DBus services
+      and python bindings to interact with the DBus interface.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/blmhemu/chuyuen_hidkbd_driver</url>
+  <provides>
+    <modalias>usb:v1044p7A39d*</modalias>
+  </provides>
+</component>
