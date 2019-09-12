@@ -20,65 +20,68 @@ all: driver
 
 # Driver compilation
 driver:
-	@echo -e "\n::\033[32m Compiling Aero15 Keyboard kernel modules\033[0m"
+	@echo -e "\n::\033[32m Compiling OpenAero kernel modules\033[0m"
 	@echo "========================================"
 	$(MAKE) -C $(KERNELDIR) M=$(DRIVERDIR) modules
 
 driver_clean:
-	@echo -e "\n::\033[32m Cleaning Aero15 Keyboard kernel modules\033[0m"
+	@echo -e "\n::\033[32m Cleaning OpenAero kernel modules\033[0m"
 	@echo "========================================"
 	$(MAKE) -C "$(KERNELDIR)" M="$(DRIVERDIR)" clean
 
 # Install kernel modules and then update module dependencies
 driver_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard kernel modules\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero kernel modules\033[0m"
 	@echo "====================================================="
 	@cp -v $(DRIVERDIR)/*.ko $(DESTDIR)/$(MODULEDIR)
 	@chown -v root:root $(DESTDIR)/$(MODULEDIR)/*.ko
 	depmod
 
-# Just use for packaging Aero15 Keyboard, not for installing manually
+# Just use for packaging openaero, not for installing manually
 driver_install_packaging:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard kernel modules\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero kernel modules\033[0m"
 	@echo "====================================================="
 	@cp -v $(DRIVERDIR)/*.ko $(DESTDIR)/$(MODULEDIR)
 
 # Remove kernel modules
 driver_uninstall:
-	@echo -e "\n::\033[34m Uninstalling Aero15 Keyboard kernel modules\033[0m"
+	@echo -e "\n::\033[34m Uninstalling OpenAero kernel modules\033[0m"
 	@echo "====================================================="
-	@rm -fv $(DESTDIR)/$(MODULEDIR)/aero15kbd_driver.ko
+	@rm -fv $(DESTDIR)/$(MODULEDIR)/razerkbd.ko
+	@rm -fv $(DESTDIR)/$(MODULEDIR)/razermouse.ko
+	@rm -fv $(DESTDIR)/$(MODULEDIR)/razerfirefly.ko
+	@rm -fv $(DESTDIR)/$(MODULEDIR)/razercore.ko
 
 # Razer Daemon
 daemon_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard Daemon\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero Daemon\033[0m"
 	@echo "====================================================="
 	make --no-print-directory -C daemon install
 
 ubuntu_daemon_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard Daemon\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero Daemon\033[0m"
 	@echo "====================================================="
 	make --no-print-directory -C daemon ubuntu_install
 
 
 daemon_uninstall:
-	@echo -e "\n::\033[34m Uninstalling Aero15 Keyboard Daemon\033[0m"
+	@echo -e "\n::\033[34m Uninstalling OpenAero Daemon\033[0m"
 	@echo "====================================================="
 	make --no-print-directory -C daemon uninstall
 
 # Python Library
 python_library_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard python library\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero python library\033[0m"
 	@echo "====================================================="
 	@make --no-print-directory -C pylib install
 
 ubuntu_python_library_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard python library\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero python library\033[0m"
 	@echo "====================================================="
 	@make --no-print-directory -C pylib ubuntu_install
 
 python_library_uninstall:
-	@echo -e "\n::\033[34m Uninstalling Aero15 Keyboard python library\033[0m"
+	@echo -e "\n::\033[34m Uninstalling OpenAero python library\033[0m"
 	@echo "====================================================="
 	@make --no-print-directory -C pylib uninstall
 
@@ -113,36 +116,36 @@ remove_dkms:
 	rm -rf $(DESTDIR)/usr/src/$(DKMS_NAME)-$(DKMS_VER)
 
 udev_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard udev rules\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero udev rules\033[0m"
 	@echo "====================================================="
 	install -m 644 -v -D install_files/udev/99-razer.rules $(DESTDIR)/usr/lib/udev/rules.d/99-razer.rules
 	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)/usr/lib/udev/razer_mount
 
 udev_uninstall:
-	@echo -e "\n::\033[34m Uninstalling Aero15 Keyboard udev rules\033[0m"
+	@echo -e "\n::\033[34m Uninstalling OpenAero udev rules\033[0m"
 	@echo "====================================================="
 	rm -f $(DESTDIR)/usr/lib/udev/rules.d/99-razer.rules $(DESTDIR)/usr/lib/udev/razer_mount
 
 ubuntu_udev_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard udev rules\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero udev rules\033[0m"
 	@echo "====================================================="
 	install -m 644 -v -D install_files/udev/99-razer.rules $(DESTDIR)/lib/udev/rules.d/99-razer.rules
 	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)/lib/udev/razer_mount
 
 ubuntu_udev_uninstall:
-	@echo -e "\n::\033[34m Uninstalling Aero15 Keyboard udev rules\033[0m"
+	@echo -e "\n::\033[34m Uninstalling OpenAero udev rules\033[0m"
 	@echo "====================================================="
 	rm -f $(DESTDIR)/lib/udev/rules.d/99-razer.rules $(DESTDIR)/lib/udev/razer_mount
 
 appstream_install:
-	@echo -e "\n::\033[34m Installing Aero15 Keyboard AppStream metadata\033[0m"
+	@echo -e "\n::\033[34m Installing OpenAero AppStream metadata\033[0m"
 	@echo "====================================================="
-	install -m 644 -v -D install_files/appstream/io.github.openrazer.openrazer.metainfo.xml $(DESTDIR)/usr/share/metainfo/io.github.openrazer.openrazer.metainfo.xml
+	install -m 644 -v -D install_files/appstream/io.github.blmhemu.openaero.metainfo.xml $(DESTDIR)/usr/share/metainfo/io.github.blmhemu.openaero.metainfo.xml
 
 appstream_uninstall:
-	@echo -e "\n::\033[34m Uninstalling Aero15 Keyboard AppStream metadata\033[0m"
+	@echo -e "\n::\033[34m Uninstalling OpenAero AppStream metadata\033[0m"
 	@echo "====================================================="
-	rm -f $(DESTDIR)/usr/share/metainfo/io.github.openrazer.openrazer.metainfo.xml
+	rm -f $(DESTDIR)/usr/share/metainfo/io.github.blmhemu.openaero.metainfo.xml
 
 # Install for Ubuntu
 ubuntu_install: setup_dkms ubuntu_udev_install ubuntu_daemon_install ubuntu_python_library_install appstream_install
