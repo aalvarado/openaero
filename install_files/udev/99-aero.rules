@@ -1,0 +1,21 @@
+ACTION!="add", GOTO="aero_end"
+SUBSYSTEMS=="usb|input|hid", ATTRS{idVendor}=="1044", GOTO="aero_vendor"
+GOTO="aero_end"
+
+LABEL="aero_vendor"
+
+# Keyboards
+ATTRS{idProduct}=="7A39", \
+    ATTRS{idVendor}=="1044", \
+    ENV{AERO_DRIVER}="aerokbd"
+
+# Set permissions if this is an input node
+SUBSYSTEM=="input|hid", GROUP:="plugdev"
+
+# We're done unless it's the hid node
+SUBSYSTEM!="hid", GOTO="aero_end"
+
+# Rebind if needed
+SUBSYSTEM=="hid", RUN+="aero_mount $env{AERO_DRIVER} $kernel"
+
+LABEL="aero_end"

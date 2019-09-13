@@ -8,13 +8,13 @@
 #include <linux/module.h>
 
 MODULE_AUTHOR("Hemanth Bollamreddi <blmhemu@gmail.com>");
-MODULE_DESCRIPTION("HID Keyboard driver for Chu Yuen (Holtek) Keyboard.");
+MODULE_DESCRIPTION("HID Keyboard driver for Gigabyte Aero Keyboard.");
 MODULE_LICENSE("GPL v2");
 
 //TODO: If put in mainstream kernel, modify this file to include the VID and PID.
 //#include "hid-ids.h"
 #define USB_VENDOR_ID_CHUYUEN 0x1044
-#define USB_DEVICE_ID_CHUTUEN_HIDKBD 0x7A39
+#define USB_DEVICE_ID_CHUYUEN_HIDKBD 0x7A39
 
 #define HIDRAW_FN_ESC 0x04000084
 #define HIDRAW_FN_F2 0x0400007C
@@ -67,7 +67,7 @@ static int chuyuen_probe(struct hid_device *hdev, const struct hid_device_id *id
 }
 
 static const struct hid_device_id chuyuen_kbd_devices[] = {
-	{HID_USB_DEVICE(USB_VENDOR_ID_CHUYUEN, USB_DEVICE_ID_CHUTUEN_HIDKBD)},
+	{HID_USB_DEVICE(USB_VENDOR_ID_CHUYUEN, USB_DEVICE_ID_CHUYUEN_HIDKBD)},
 	{}
 };
 MODULE_DEVICE_TABLE(hid, chuyuen_kbd_devices);
