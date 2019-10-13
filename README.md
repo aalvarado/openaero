@@ -15,7 +15,7 @@ A collection of Linux drivers of various components for (Gigabyte) Aero devices.
 ### Keyboard
 
 | Device                                        |   VID:PID   |
-| --------------------------------------------- | ----------- |
+| :-------------------------------------------- | :---------- |
 | Gigabyte Aero 15X V8                          |  1044:7A39  |
 
 
