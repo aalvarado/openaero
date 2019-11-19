@@ -25,6 +25,9 @@ pacman -S linux-headers
 pacman -S openaero-meta
 ```
 
+## Notes
+* I highly recommend using [light utility](https://github.com/haikarainen/light) for changing brightness. Link it to the BrightnessUp / BrightnessDown keyboard symbol if need be.
+
 ## Credits
 **This project is heavily inspired (i.e copied 😄) from [OpenRazer](https://openrazer.github.io/).**
 
